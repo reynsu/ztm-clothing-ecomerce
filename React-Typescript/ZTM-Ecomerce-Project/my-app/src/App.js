@@ -1,7 +1,20 @@
-import { Directory } from "./components/directory/category-menu.component";
+import Home from "./routes/home/home.component";
+import { Routes, Route } from "react-router-dom";
+import { Navigation } from "./routes/navigation/navigation.component";
+
+const Shop = () => {
+  return <h1>You are inside our Shop</h1>;
+};
 
 const App = () => {
-  return <Directory />;
+  return (
+    <Routes>
+      <Route path="/" element={<Navigation />}>
+        <Route index element={<Home />} />
+        <Route path="shop" element={<Shop />} />
+      </Route>
+    </Routes>
+  );
 };
 
 export default App;
